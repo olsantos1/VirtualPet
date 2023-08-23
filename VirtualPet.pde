@@ -27,7 +27,6 @@ ellipse(200, 180, 30, 30);
 //inner eye
 fill(0, 0, 0);
 ellipse(200, 180, 10, 10);
-print(200);
 //wing
 pushMatrix();
 translate(110, 300);
