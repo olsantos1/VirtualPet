@@ -1,8 +1,13 @@
-void setup(){
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
+public void setup(){
 size(400, 400);
+arduino = new Arduino(this, Arduino.list()[1], 57600);
 }
-void draw(){
+public void draw(){
 background(250, 150, 155);
+int light = arduino.analogRead(5);
 //legs
 stroke(0, 0, 0);
 strokeWeight(5);
@@ -30,7 +35,7 @@ ellipse(200, 180, 10, 10);
 //wing
 pushMatrix();
 translate(110, 300);
-if(!mousePressed){
+if(light > 200){
 rotate(-PI/12.0);
 }
 ellipse(0, 0, 100, 50);
